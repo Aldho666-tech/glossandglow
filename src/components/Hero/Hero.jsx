@@ -169,8 +169,8 @@ const Hero = () => {
         transition={{ duration: 0.8, delay: 1.2 }}
       >
         <div className={styles.actionsBox}>
-          <button className="btn-cream" id="hero-book-btn">Book a wash ↗</button>
-          <button className="btn-ghost" id="hero-packages-btn">See Packages</button>
+          <a href="#booking" className="btn-cream" id="hero-book-btn" style={{ textDecoration: 'none' }}>Book a wash ↗</a>
+          <a href="#services" className="btn-ghost" id="hero-packages-btn" style={{ textDecoration: 'none' }}>See Packages</a>
         </div>
       </motion.div>
 

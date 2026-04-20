@@ -65,8 +65,12 @@
 
 .cols {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 24px;
+}
+
+.mapCol {
+  width: 100%;
 }
 
 .colTitle {
@@ -115,18 +119,25 @@
   font-family: var(--font-display);
 }
 
+@media (max-width: 900px) {
+  .cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .mapCol {
+    grid-column: 1 / -1; /* Make map take full width of grid on tablet */
+  }
+}
+
 @media (max-width: 768px) {
   .inner {
     grid-template-columns: 1fr;
     gap: 40px;
-  }
-  .cols {
-    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 480px) {
   .footer { padding: 48px 20px 0; }
   .cols { grid-template-columns: 1fr 1fr; }
+  .mapCol { grid-column: 1 / -1; }
   .bottom { flex-direction: column; gap: 8px; text-align: center;}
 }

@@ -27,9 +27,9 @@ const CTA = () => {
         </p>
 
         <div className={styles.actions}>
-          <motion.button whileHover={{ scale: 1.05 }} className={styles.btnBlue} id="cta-book-btn">
+          <motion.a href="#booking" whileHover={{ scale: 1.05 }} className={styles.btnBlue} id="cta-book-btn" style={{ textDecoration: 'none' }}>
             Book a wash ↗
-          </motion.button>
+          </motion.a>
           <motion.a
             whileHover={{ scale: 1.05 }}
             href="https://wa.me/6281234567890"

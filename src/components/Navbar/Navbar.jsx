@@ -18,9 +18,9 @@ const Navbar = () => {
       </a>
 
       <ul className={`${styles.navLinks} ${menuOpen ? styles.open : ''}`}>
-        {['services', 'how it works', 'gallery', 'contact'].map((item) => (
+        {['Services', 'How It Works', 'Gallery', 'Contact'].map((item) => (
           <li key={item}>
-            <a href={`#${item.replace(/\s+/g, '-')}`} onClick={() => setMenuOpen(false)}>
+            <a href={`#${item.toLowerCase().replace(/\s+/g, '-')}`} onClick={() => setMenuOpen(false)}>
               {item}
             </a>
           </li>
@@ -28,7 +28,7 @@ const Navbar = () => {
       </ul>
 
       <div className={styles.navRight}>
-        <button className={styles.navPill} id="nav-book-btn">Book now ✦</button>
+        <a href="#booking" className={styles.navPill} id="nav-book-btn">Book Now</a>
         <button
           className={`${styles.burger} ${menuOpen ? styles.burgerOpen : ''}`}
           onClick={() => setMenuOpen(!menuOpen)}
