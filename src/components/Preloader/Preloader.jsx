@@ -20,25 +20,28 @@ const Preloader = ({ onComplete }) => {
         <div className={styles.contentWrap}>
           <motion.div
             className={styles.logoWrap}
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
+            initial={{ opacity: 0, scale: 0.3, rotate: -10 }}
+            animate={{ 
+              opacity: 1, 
+              scale: 1, 
+              rotate: 0,
+              y: [0, -15, 0] // Floating effect
+            }}
+            transition={{ 
+              layout: { duration: 0.3 },
+              opacity: { duration: 0.5 },
+              scale: { type: "spring", stiffness: 260, damping: 20, delay: 0.3 },
+              rotate: { type: "spring", stiffness: 260, damping: 20, delay: 0.3 },
+              y: { duration: 3, ease: "easeInOut", repeat: Infinity } // Continuous float
+            }}
           >
             <img src="/logo.png" alt="GlossGo" className={styles.logoImg} />
           </motion.div>
-          <motion.h1 
-            className={styles.text}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.5 }}
-          >
-            GLOSSGO
-          </motion.h1>
           <motion.div
               className={styles.sub}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 1.2, duration: 0.5 }}
+              transition={{ delay: 1, duration: 0.5 }}
           >
             Gettin' soapy...
           </motion.div>
