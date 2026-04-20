@@ -117,6 +117,17 @@ const Packages = () => {
             </motion.div>
           ))}
         </div>
+
+        <motion.div 
+          className={styles.extraCTA}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5 }}
+        >
+          <p>Butuh paket custom atau langganan?</p>
+          <a href="https://wa.me/6281234567890" className={styles.secBtn}>Tanya di WhatsApp →</a>
+        </motion.div>
       </div>
     </section>
   )

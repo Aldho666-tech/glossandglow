@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import styles from './Hero.module.css'
 
 const WasherPerson = () => (
@@ -108,6 +108,10 @@ const staggerContainer = {
 }
 
 const Hero = () => {
+  const { scrollY } = useScroll();
+  const carY = useTransform(scrollY, [0, 500], [0, 250]);
+  const carRotate = useTransform(scrollY, [0, 500], [0, 10]);
+
   return (
     <section className={styles.hero}>
       {/* Dynamic Water Background */}
@@ -144,6 +148,7 @@ const Hero = () => {
           initial={{ y: 200, opacity: 0, rotate: -5 }}
           animate={{ y: 0, opacity: 1, rotate: 0 }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.6 }}
+          style={{ y: carY, rotate: carRotate }}
         >
           <div className={styles.carWake}>
             {/* Wake SVG Behind Car */}

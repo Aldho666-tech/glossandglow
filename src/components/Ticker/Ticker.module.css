@@ -20,8 +20,14 @@
 
 .tickerInner {
   display: inline-flex;
-  animation: tick 25s linear infinite;
+  animation: tick 20s linear infinite;
   will-change: transform;
+  width: max-content;
+}
+
+@keyframes tick {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 .tickItem {

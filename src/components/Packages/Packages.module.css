@@ -154,7 +154,42 @@
   color: var(--dark);
 }
 
+.extraCTA {
+  margin-top: 60px;
+  text-align: center;
+  background: var(--dark);
+  padding: 40px;
+  border-radius: 24px;
+  border: 3px solid var(--dark);
+  box-shadow: 6px 6px 0 var(--green);
+}
+
+.extraCTA p {
+  color: var(--cream);
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.secBtn {
+  display: inline-block;
+  background: var(--green);
+  color: var(--dark);
+  padding: 14px 32px;
+  border-radius: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  transition: transform 0.2s;
+}
+
+.secBtn:hover {
+  transform: scale(1.05);
+}
+
 @media (max-width: 900px) {
   .grid { grid-template-columns: 1fr; }
   .card:nth-child(n) { grid-column: span 1; }
+  .extraCTA { padding: 30px 20px; }
 }
