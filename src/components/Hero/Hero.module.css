@@ -1,0 +1,217 @@
+.hero {
+  background: var(--blue-dark);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 120px 20px 80px;
+}
+
+/* Water Background */
+.waterBg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+  background: radial-gradient(circle at center, var(--blue-light) 0%, var(--blue) 40%, var(--blue-dark) 100%);
+}
+
+.waterNoise {
+  position: absolute;
+  inset: 0;
+  opacity: 0.15;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+
+.ripple1, .ripple2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 40px solid rgba(255, 255, 255, 0.1);
+  width: 600px;
+  height: 600px;
+  filter: blur(8px);
+  pointer-events: none;
+}
+
+.ripple2 {
+  width: 900px;
+  height: 900px;
+  border: 60px solid rgba(255, 255, 255, 0.05);
+  filter: blur(12px);
+}
+
+/* Graphic Container (Text + Car) */
+.graphicContainer {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  margin-top: -50px;
+}
+
+/* Typography Layer */
+.textLayer {
+  position: absolute;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  pointer-events: none;
+}
+
+.textLets {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 8vw, 80px);
+  font-weight: 900;
+  color: var(--green);
+  text-transform: uppercase;
+  transform: rotate(-8deg) translateX(-15%);
+  margin-bottom: -20px;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  line-height: 1;
+}
+
+.textWashn, .textRoll {
+  font-family: var(--font-display);
+  font-size: clamp(70px, 15vw, 180px);
+  font-weight: 900;
+  color: var(--cream);
+  text-transform: uppercase;
+  line-height: 0.85;
+  letter-spacing: -2px;
+  text-shadow: 0 20px 50px rgba(0,0,0,0.6);
+  z-index: 1;
+}
+
+.textWashn {
+  transform: rotate(-4deg);
+  margin-left: -5%;
+}
+
+.textRoll {
+  transform: rotate(3deg);
+  margin-left: 10%;
+  color: transparent;
+  -webkit-text-stroke: 4px var(--cream);
+}
+
+/* Car Layer */
+.carLayer {
+  position: relative;
+  z-index: 3;
+  pointer-events: none;
+  margin-top: 40px;
+}
+
+.carSVG {
+  width: clamp(180px, 25vw, 280px);
+  height: auto;
+  margin: 0 auto;
+  transform: rotate(5deg);
+}
+
+.carWake {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 300px;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+/* Washer Person */
+.washerWrapper {
+  position: absolute;
+  top: 50%;
+  left: -20%;
+  transform: translateY(-50%) rotate(10deg);
+  width: 140px;
+  height: 140px;
+  z-index: 4;
+}
+
+.washerSVG {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0px 10px 15px rgba(0,0,0,0.5));
+}
+
+/* Actions at the bottom */
+.bottomContent {
+  position: relative;
+  z-index: 5;
+  margin-top: 40px;
+  margin-bottom: 80px;
+}
+
+.actionsBox {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Bottom Swoosh Frame */
+.bottomWaveContainer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 4;
+}
+
+.bottomWave {
+  display: block;
+  width: calc(100% + 1.3px);
+  height: clamp(80px, 15vw, 200px);
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+  .textLets {
+    transform: rotate(-6deg) translateX(-25%);
+    margin-bottom: -10px;
+  }
+  .textWashn {
+    transform: rotate(-2deg);
+    margin-left: 0;
+  }
+  .textRoll {
+    transform: rotate(2deg);
+    margin-left: 5%;
+    -webkit-text-stroke: 2px var(--cream);
+  }
+  .carSVG {
+    width: 200px;
+  }
+  .ripple1 {
+    width: 300px;
+    height: 300px;
+    border-width: 20px;
+  }
+  .ripple2 {
+    width: 500px;
+    height: 500px;
+    border-width: 30px;
+  }
+  .bottomContent {
+    margin-bottom: 120px;
+  }
+}

@@ -1,0 +1,48 @@
+.fab {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 1000;
+  width: 56px;
+  height: 56px;
+  background: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 24px rgba(37, 211, 102, 0.45);
+  text-decoration: none;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s;
+  animation: pulse-glow 2.5s ease-in-out infinite;
+}
+
+.fab:hover {
+  transform: scale(1.12) translateY(-2px);
+  box-shadow: 0 8px 36px rgba(37, 211, 102, 0.6);
+}
+
+.tooltip {
+  position: absolute;
+  right: 68px;
+  background: var(--dark);
+  color: var(--cream);
+  font-size: 12px;
+  font-weight: 600;
+  font-family: var(--font-main);
+  padding: 8px 14px;
+  border-radius: 100px;
+  white-space: nowrap;
+  animation: fadeInRight 0.2s ease both;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 6px solid transparent;
+  border-right: none;
+  border-left-color: var(--dark);
+}

@@ -1,0 +1,154 @@
+/* =============================================
+   GLOSSGO & WASH — Gen Z Styled React App
+   ============================================= */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue: #1346c0;
+  --blue-dark: #0d35a0;
+  --blue-light: #3a68e8;
+  --cream: #f0eee8;
+  --cream-dark: #e0ddd5;
+  --dark: #0d0d0d;
+  --dark-mid: #1a1a1a;
+  --green: #7ee8a2;
+  --font-main: 'Plus Jakarta Sans', sans-serif;
+  --font-display: 'Outfit', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-main);
+  background: var(--cream);
+  color: var(--dark);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===================== SCROLLBAR ===================== */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--dark); }
+::-webkit-scrollbar-thumb { background: var(--blue); border-radius: 3px; }
+
+/* ===================== KEYFRAMES ===================== */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-14px) rotate(3deg); }
+}
+@keyframes shadow-pulse {
+  0%, 100% { transform: scaleX(1); opacity: 0.25; }
+  50% { transform: scaleX(0.88); opacity: 0.15; }
+}
+@keyframes drip {
+  0% { opacity: 0; transform: translateY(0); }
+  30% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(30px); }
+}
+@keyframes tick {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes drop-fall {
+  0% { transform: translateY(-8px); opacity: 0.5; }
+  50% { transform: translateY(8px); opacity: 1; }
+  100% { transform: translateY(-8px); opacity: 0.5; }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-32px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(32px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(19, 70, 192, 0.4); }
+  50% { box-shadow: 0 0 0 12px rgba(19, 70, 192, 0); }
+}
+
+/* ===================== COMPONENTS ===================== */
+.eyebrow {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--blue);
+  background: #dde7f9;
+  border-radius: 100px;
+  padding: 5px 14px;
+  margin-bottom: 20px;
+}
+.big-title {
+  font-family: var(--font-display);
+  font-size: clamp(30px, 5vw, 52px);
+  font-weight: 800;
+  letter-spacing: -2px;
+  line-height: 1.0;
+  margin-bottom: 14px;
+  color: var(--dark);
+}
+.big-title em {
+  font-style: italic;
+  color: var(--blue);
+}
+.body-text {
+  font-size: 14px;
+  color: #888;
+  line-height: 1.75;
+  max-width: 420px;
+  margin-bottom: 40px;
+}
+.btn-cream {
+  background: var(--cream);
+  color: var(--blue);
+  border: none;
+  border-radius: 100px;
+  padding: 13px 26px;
+  font-weight: 700;
+  font-size: 14px;
+  font-family: var(--font-main);
+  cursor: pointer;
+  margin-right: 10px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-cream:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--cream);
+  border: 1.5px solid rgba(240, 238, 232, 0.35);
+  border-radius: 100px;
+  padding: 12px 26px;
+  font-weight: 600;
+  font-size: 14px;
+  font-family: var(--font-main);
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.btn-ghost:hover {
+  background: rgba(240, 238, 232, 0.12);
+  border-color: rgba(240, 238, 232, 0.6);
+}
